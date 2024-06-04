@@ -1,0 +1,31 @@
+.app-references {
+  .app-references-gallery {
+    display: grid; 
+    grid-auto-rows: 1fr; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 0.5rem; 
+  }
+
+  .app-references-item,
+  .app-references-images {
+    &:hover {
+      .effect-zoom,
+      &.effect-zoom {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .effect-zoom {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      transition: transform .5s ease, opacity 0.3s ease-in-out;
+    }
+  }
+
+  
+}

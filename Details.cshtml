@@ -1,0 +1,46 @@
+@inherits AppCode.Razor.AppRazor
+@using AppCode
+@using AppCode.Data
+
+@{
+  var reference = App.Data.GetAll<Reference>().FirstOrDefault(r => r.UrlKey == MyPage.Parameters.String("details"));
+  var fancyboxAttribute = Constants.FancyboxPrefix + UniqueKey; 
+}
+
+<div class="app-references" @Kit.Toolbar.Default(reference)>
+  <div class="row">
+    <div class="col-12 col-md-8 col-lg-7">
+      <h1>@reference.Title</h1>
+      <div class="d-flex gap-1 mb-2">
+        <small>@reference.CreateDate.ToString("dd.MM.yyyy")</small>
+        @foreach(var category in reference.Categories) {
+          <small class="app-references-category text-muted">@category.Title</small>
+        }
+      </div>
+      @Html.Raw(reference.Description)
+    </div>
+    <div class="col-12 col-md-4 col-lg-5">
+      
+      <div class="app-references-images effect-zoom mb-2">
+        <a href="@reference.PreviewImage" data-fancybox="@fancyboxAttribute">
+          @Kit.Image.Picture(reference.Field("PreviewImage"))
+        </a>
+      </div>
+
+      <div class="app-references-gallery mb-4 mb-md-0">
+        @foreach(var image in reference.Folder("Images").Files) {
+          <div class="app-references-images effect-zoom">
+            <a href="@image.Url" data-fancybox="@fancyboxAttribute">
+              @Kit.Image.Picture(image)
+            </a>
+          </div>
+        }
+      </div>
+    </div>
+    <div class="col-md-12">
+      <a href="@Link.To()" class="btn btn-primary">@App.Resources.BtnBack</a>
+    </div>
+  </div>
+</div>
+
+@Html.Partial("Assets.cshtml")
