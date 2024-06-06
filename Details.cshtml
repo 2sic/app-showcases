@@ -1,4 +1,5 @@
 @inherits AppCode.Razor.AppRazor
+@using ToSic.Razor.Blade
 @using AppCode
 @using AppCode.Data
 
@@ -22,15 +23,24 @@
     <div class="col-12 col-md-4 col-lg-5">
       
       <div class="app-references-images effect-zoom mb-2">
-        <a href="@reference.PreviewImage" data-fancybox="@fancyboxAttribute">
-          @Kit.Image.Picture(reference.Field("PreviewImage"))
+        @{
+          var picExtendedDescription = reference.File("PreviewImage").Metadata.String("DescriptionExtended", scrubHtml: true);
+          var pic = Kit.Image.Picture(reference.Field("PreviewImage"));
+          var picTitle = pic.Alt + (Text.Has(picExtendedDescription) ? " - " + picExtendedDescription : "");
+        }
+        <a href="@reference.PreviewImage" data-fancybox="@fancyboxAttribute" data-caption="@picTitle">
+          @pic
         </a>
       </div>
 
       <div class="app-references-gallery mb-4 mb-md-0">
         @foreach(var image in reference.Folder("Images").Files) {
+          var picGalDescription = image.Metadata.String("Description", scrubHtml: true);
+          var picGalDescriptionExtended = image.Metadata.String("DescriptionExtended", scrubHtml: true);
+          var picGalTitle = picGalDescription + (Text.Has(picGalDescriptionExtended) ? " - " + picGalDescriptionExtended : "");
+          
           <div class="app-references-images effect-zoom">
-            <a href="@image.Url" data-fancybox="@fancyboxAttribute">
+            <a href="@image.Url" data-fancybox="@fancyboxAttribute" data-caption="@picGalTitle">
               @Kit.Image.Picture(image)
             </a>
           </div>
