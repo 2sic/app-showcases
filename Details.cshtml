@@ -14,7 +14,7 @@
       <h1>@reference.Title</h1>
       <div class="d-flex gap-1 mb-2">
         <small>@reference.CreateDate.ToString("dd.MM.yyyy")</small>
-        @foreach(var category in reference.Categories) {
+        @foreach (var category in reference.Categories) {
           <small class="app-references-category text-muted">@category.Title</small>
         }
       </div>
@@ -34,7 +34,7 @@
       </div>
 
       <div class="app-references-gallery mb-4 mb-md-0">
-        @foreach(var image in reference.Folder("Images").Files) {
+        @foreach (var image in reference.Folder("Images").Files) {
           var picGalDescription = image.Metadata.String("Description", scrubHtml: true);
           var picGalDescriptionExtended = image.Metadata.String("DescriptionExtended", scrubHtml: true);
           var picGalTitle = picGalDescription + (Text.Has(picGalDescriptionExtended) ? " - " + picGalDescriptionExtended : "");

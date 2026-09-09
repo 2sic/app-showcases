@@ -15,7 +15,7 @@
     references = references.Where(r => r.Categories.Select(c => c.UrlKey).Contains(categoryParameter));
   }
 
-  if(viewConfigHasCategory) {
+  if (viewConfigHasCategory) {
     references = references.Where(r => r.Categories.Contains(viewConfig.Category));
   }
 
@@ -30,7 +30,7 @@
       <h1>@viewConfig.Title @(Text.Has(viewConfig.Title) && viewConfig.IsNotEmpty("Category") ? " - " : "") @(viewConfig.IsNotEmpty("Category") ? viewConfig.Category.Title : "")</h1>
     </div>
 
-    @if(!viewConfigHasCategory) {
+    @if (!viewConfigHasCategory) {
       <div class="app-references-category-filter mb-2">
         <a href="@Link.To()" class="btn @(categoryParameter != null ? "btn-outline-primary" : "btn-primary")">@App.Resources.FilterAll</a>
         @foreach (var category in categories) {
@@ -50,7 +50,7 @@
           <h2>@reference.Title</h2>
           <div class="d-flex gap-1 mb-2">
             <small>@reference.CreateDate.ToString("dd.MM.yyyy")</small>
-            @foreach(var category in reference.Categories) {
+            @foreach (var category in reference.Categories) {
               <small class="app-references-category text-muted">@category.Title</small>
             }
           </div>
