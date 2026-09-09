@@ -1,5 +1,3 @@
-require('../scss/_style.scss');
-
 import { initFancybox } from './lib-2sxc-fancybox';
 import { FancyboxOptions } from './lib-2sxc-fancybox-options';
 
