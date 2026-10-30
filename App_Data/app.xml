@@ -1053,7 +1053,7 @@
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
         <Dimension DimensionID="17" ReadOnly="false" />
       </Value>
-      <Value Key="Version" Value="03.00.00" Type="String">
+      <Value Key="Version" Value="03.00.01" Type="String">
         <Dimension DimensionID="17" ReadOnly="false" />
       </Value>
     </Entity>
