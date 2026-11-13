@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="22.00.00" ExportDate="2026-09-09T14:20:01.0351961+02:00">
+<SexyContent FileVersion="07.00.00" MinimumRequiredVersion="07.04.02" ModuleVersion="22.01.00" ExportDate="2026-11-13T15:01:29.0969496+01:00">
   <Header>
     <App Guid="4cd5456f-5ad4-4b94-ad4d-03ac4a7c6636" />
     <Language Default="en-us" />
@@ -1041,13 +1041,13 @@
       <Value Key="OriginalId" Value="" Type="String">
         <Dimension DimensionID="17" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredDnnVersion" Value="09.06.01" Type="String">
+      <Value Key="RequiredDnnVersion" Value="9.11.2" Type="String">
         <Dimension DimensionID="17" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredOqtaneVersion" Value="" Type="String">
+      <Value Key="RequiredOqtaneVersion" Value="10.0.0" Type="String">
         <Dimension DimensionID="17" ReadOnly="false" />
       </Value>
-      <Value Key="RequiredVersion" Value="17.07.00" Type="String">
+      <Value Key="RequiredVersion" Value="21.05.00" Type="String">
         <Dimension DimensionID="17" ReadOnly="false" />
       </Value>
       <Value Key="SupportsAjaxReload" Value="True" Type="Boolean">
@@ -1305,6 +1305,41 @@
         <Dimension DimensionID="17" ReadOnly="false" />
       </Value>
       <Value Key="SkipFallbackTitle" Value="False" Type="Boolean">
+        <Dimension DimensionID="17" ReadOnly="false" />
+      </Value>
+    </Entity>
+    <Entity TargetType="3" AssignmentObjectType="App" AttributeSetStaticName="be34f64b-7d1f-4ad0-b488-dabbbb01a186" AttributeSetName="LightSpeedOutputDecorator" EntityGUID="3a419280-40f0-4fbc-939d-3a731cda445a" Json="True" KeyNumber="330">
+      <Value Key="Advanced" Value="" Type="String">
+        <Dimension DimensionID="17" ReadOnly="false" />
+      </Value>
+      <Value Key="ByUrlParameters" Value="False" Type="Boolean">
+        <Dimension DimensionID="17" ReadOnly="false" />
+      </Value>
+      <Value Key="Duration" Value="14400" Type="Number">
+        <Dimension DimensionID="17" ReadOnly="false" />
+      </Value>
+      <Value Key="DurationEditors" Value="300" Type="Number">
+        <Dimension DimensionID="17" ReadOnly="false" />
+      </Value>
+      <Value Key="DurationSystemAdmin" Value="300" Type="Number">
+        <Dimension DimensionID="17" ReadOnly="false" />
+      </Value>
+      <Value Key="DurationUsers" Value="-1" Type="Number">
+        <Dimension DimensionID="17" ReadOnly="false" />
+      </Value>
+      <Value Key="IsEnabled" Value="True" Type="Boolean">
+        <Dimension DimensionID="17" ReadOnly="false" />
+      </Value>
+      <Value Key="Title" Value="✅ - Users 14400s, Reg 🚫, Editors 300s, SysAdmins 300s" Type="String">
+        <Dimension DimensionID="17" ReadOnly="false" />
+      </Value>
+      <Value Key="UrlParameterNames" Value="" Type="String">
+        <Dimension DimensionID="17" ReadOnly="false" />
+      </Value>
+      <Value Key="UrlParametersCaseSensitive" Value="False" Type="Boolean">
+        <Dimension DimensionID="17" ReadOnly="false" />
+      </Value>
+      <Value Key="UrlParametersOthersDisableCache" Value="True" Type="Boolean">
         <Dimension DimensionID="17" ReadOnly="false" />
       </Value>
     </Entity>
